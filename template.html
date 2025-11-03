@@ -27,7 +27,7 @@
       style="width: 15rem"
     />
     <p>Boutique residences in La Paz</p>
-    <a class="btn-main" href="">Visit the property</a>
+    <a class="btn-main" href="#listings">Visit the property</a>
   </div>
 
   <!-- DOS COLUMNAS CON ESPACIADO -->
@@ -149,7 +149,12 @@
             Mirante.
           </p>
           <div class="btn-wrapper">
-            <a href="" class="btn-main">Download brochure</a>
+            <!-- Botón visible solo en escritorio -->
+            <a href="" class="btn-main btn-desktop">Download brochure</a>
+
+            <!-- Botón visible solo en móvil -->
+            <a href="" class="btn-main btn-mobile">Download brochure</a>
+            
             <a href="" class="btn-main">Watch the video</a>
           </div>
         </div>
@@ -375,6 +380,73 @@
     </a>
   </section>
 
+  <!-- CARRUSEL -->
+
+  <div class="carousel">
+    <div class="main-image-container">
+      <button class="arrow left">&#10094;</button>
+      <img
+        id="mainImage"
+        src="https://ronival.com/wp-content/uploads/2025/04/0A7A7142_resultado-scaled.webp"
+        alt="Imagen Principal"
+      />
+      <button class="arrow right">&#10095;</button>
+    </div>
+
+    <div class="thumbnails-wrapper">
+      <div class="thumbnails" id="thumbnails">
+        <img
+          src="https://ronival.com/wp-content/uploads/2025/04/0A7A7142_resultado-scaled.webp"
+          alt=""
+        />
+        <img
+          src="https://ronival.com/wp-content/uploads/2025/04/0A7A7797_resultado-scaled.webp"
+          alt=""
+        />
+        <img
+          src="https://ronival.com/wp-content/uploads/2025/04/0A7A8510_resultado-scaled.webp"
+          alt=""
+        />
+        <img
+          src="https://ronival.com/wp-content/uploads/2025/04/0A7A8959_resultado-scaled.webp"
+          alt=""
+        />
+        <img
+          src="https://ronival.com/wp-content/uploads/2025/04/0A7A9018_resultado-scaled.webp"
+          alt=""
+        />
+        <img
+          src="https://ronival.com/wp-content/uploads/2025/04/0A7A9113_resultado-scaled.webp"
+          alt=""
+        />
+        <img
+          src="https://ronival.com/wp-content/uploads/2025/04/607A1378-HDR_resultado-scaled.webp"
+          alt=""
+        />
+        <img
+          src="https://ronival.com/wp-content/uploads/2025/04/607A1586-HDR_resultado-scaled.webp"
+          alt=""
+        />
+        <img
+          src="https://ronival.com/wp-content/uploads/2025/04/607A8988-Edit_resultado-scaled.webp"
+          alt=""
+        />
+        <img
+          src="https://ronival.com/wp-content/uploads/2025/04/HOTEL-LOS-PATIOS-26_resultado.webp"
+          alt=""
+        />
+        <img
+          src="https://ronival.com/wp-content/uploads/2025/04/HOTEL-LOS-PATIOS-38_resultado.webp"
+          alt=""
+        />
+        <img
+          src="https://ronival.com/wp-content/uploads/2025/04/0A7A6457_resultado-scaled.webp"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+
   <!-- ESPACIADOR -->
 
   <div class="spacer"></div>
@@ -425,5 +497,15 @@
         </p>
       </div>
     </div>
+  </section>
+
+  <!-- LISTINGS -->
+
+  <section class="listings" id="listings">
+    <iframe
+      class="listings-iframe"
+      src="https://www.findmexicohouses.com/results-gallery/?hood=7423922&photo=1&sort=importdate&status=A"
+      frameborder="0"
+    ></iframe>
   </section>
 </body>

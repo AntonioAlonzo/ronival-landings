@@ -82,6 +82,14 @@ a {
     color: white;
 }
 
+.btn-mobile {
+    display: none;
+}
+
+.btn-desktop {
+    display: inline-block;
+}
+
 .btn-wrapper {
     display: flex;
     gap: 1rem;
@@ -109,6 +117,14 @@ a {
     .btn-wrapper .btn-main {
         width: 80%;
         margin: 0;
+    }
+
+    .btn-desktop {
+        display: none;
+    }
+
+    .btn-mobile {
+        display: inline-block;
     }
 }
 
@@ -471,7 +487,7 @@ h3 {
 
 .take-a-tour {
     text-align: center;
-    padding: 1rem 0;
+    padding: 2rem 0;
 }
 
 .take-a-tour h2 {
@@ -512,6 +528,79 @@ h3 {
     height: 10vh;
 }
 
+/* CARRUSEL */
+
+.carousel {
+    width: 100%;
+    font-family: sans-serif;
+}
+
+.carousel .main-image-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+}
+
+.carousel .main-image-container img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2;
+}
+
+.carousel .arrow.left {
+    left: 10px;
+}
+
+.carousel .arrow.right {
+    right: 10px;
+}
+
+.carousel .thumbnails-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel .thumbnails {
+    display: flex;
+    transition: transform 0.3s ease;
+    width: max-content;
+}
+
+.carousel .thumbnails img {
+    width: 25vw;
+    cursor: pointer;
+    display: block;
+    flex-shrink: 0;
+}
+
+.carousel .thumbnails img.active {
+    opacity: 0.6;
+}
+
+@media (max-width: 598px) {
+    .carousel .thumbnails-wrapper {
+        display: none;
+    }
+
+    .carousel .main-image-container {
+        height: 30vh;
+    }
+}
+
 /* FAQ */
 
 .faq {
@@ -520,6 +609,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .faq h2,
@@ -528,12 +618,15 @@ h3 {
     align-self: center;
 }
 
-.acordeon-item:not(:last-child) {
-    border-bottom: 1px solid #ccc;
+.acordeon-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.acordeon-item:not(:last-child) {
+    border-bottom: 1px solid #ccc;
 }
 
 .acordeon-titulo,
@@ -583,4 +676,16 @@ h3 {
     .acordeon-contenido {
         width: 90%;
     }
+}
+
+/* LISTINGS */
+
+.listings {
+    width: 100%;
+    height: 70vh;
+}
+
+.listings-iframe {
+    width: 100%;
+    height: 100%;
 }

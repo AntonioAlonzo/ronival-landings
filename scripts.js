@@ -51,3 +51,50 @@ window.addEventListener("load", () => {
     });
   });
 });
+
+window.addEventListener("load", () => {
+  const mainImage = document.getElementById("mainImage");
+  const thumbnailsContainer = document.getElementById("thumbnails");
+  const thumbnails = thumbnailsContainer.querySelectorAll("img");
+  const images = Array.from(thumbnails).map(img => img.src);
+
+  let currentIndex = 0;
+  thumbnails[0].classList.add("active");
+
+  function updateCarousel(index) {
+    currentIndex = index;
+    mainImage.src = images[currentIndex];
+
+    thumbnails.forEach((thumb, i) => {
+      thumb.classList.toggle("active", i === currentIndex);
+    });
+
+    scrollThumbnailsToCurrent();
+  }
+
+  function scrollThumbnailsToCurrent() {
+    const visibleThumbs = 4;
+    const thumbWidth = thumbnails[0].offsetWidth;
+    const scrollPos =
+      Math.floor(currentIndex / visibleThumbs) * visibleThumbs * thumbWidth;
+    thumbnailsContainer.style.transform = `translateX(-${scrollPos}px)`;
+  }
+
+  document.querySelector(".arrow.left").addEventListener("click", () => {
+    const newIndex = (currentIndex - 1 + images.length) % images.length;
+    updateCarousel(newIndex);
+  });
+
+  document.querySelector(".arrow.right").addEventListener("click", () => {
+    const newIndex = (currentIndex + 1) % images.length;
+    updateCarousel(newIndex);
+  });
+
+  thumbnails.forEach((thumb, i) => {
+    thumb.addEventListener("click", () => {
+      updateCarousel(i);
+    });
+  });
+
+  window.addEventListener("resize", scrollThumbnailsToCurrent);
+});
