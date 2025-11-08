@@ -56,7 +56,7 @@ window.addEventListener("load", () => {
   const mainImage = document.getElementById("mainImage");
   const thumbnailsContainer = document.getElementById("thumbnails");
   const thumbnails = thumbnailsContainer.querySelectorAll("img");
-  const images = Array.from(thumbnails).map(img => img.src);
+  const images = Array.from(thumbnails).map((img) => img.src);
 
   let currentIndex = 0;
   thumbnails[0].classList.add("active");
@@ -97,4 +97,45 @@ window.addEventListener("load", () => {
   });
 
   window.addEventListener("resize", scrollThumbnailsToCurrent);
+});
+
+window.addEventListener("load", () => {
+  const carousels = document.querySelectorAll(".dot-carousel");
+
+  carousels.forEach((carousel) => {
+    const track = carousel.querySelector(".dot-carousel-track");
+    const slides = Array.from(track.children);
+    const dotsContainer = carousel.querySelector(".dot-carousel-dots");
+    let currentIndex = 0;
+
+    if (slides.length <= 1) {
+      dotsContainer.style.display = "none";
+      return;
+    }
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement("div");
+      dot.classList.add("dot-carousel-dot");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        currentIndex = i;
+        updateCarousel();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsContainer.children);
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach((dot, i) =>
+        dot.classList.toggle("active", i === currentIndex)
+      );
+    }
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    }, 5000);
+  });
 });

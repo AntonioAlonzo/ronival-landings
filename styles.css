@@ -221,6 +221,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
 }
 
 .one-column p {
@@ -699,6 +700,120 @@ h3 {
     .acordeon-titulo,
     .acordeon-contenido {
         width: 90%;
+    }
+}
+
+/* DOT CARROUSEL */
+
+.dot-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.dot-carousel h2 {
+    font-weight: 500;
+}
+
+.dot-carousel-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    width: 100%;
+}
+
+.dot-carousel .slide {
+    width: 100%;
+    height: 85vh;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.dot-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 3rem;
+}
+
+.dot-carousel-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot-carousel-dot.active {
+    background-color: #2F5F86;
+}
+
+/* MULTICOLUMN LAYOUT */
+
+.multicolumn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 2rem;
+    gap: 10rem;
+    flex-wrap: wrap;
+}
+
+
+.multicolumn-child p,
+.multicolumn-child h3 {
+    text-align: left;
+}
+
+.multicolumn-child h3 {
+    font-size: 1.5rem;
+}
+
+.multicolumn-child>img {
+    width: auto;
+    height: 30rem;
+}
+
+@media (max-width: 1370px) {
+    .multicolumn {
+        gap: 2rem;
+    }
+
+    .multicolumn-child {
+        width: 40%;
+    }
+
+    .multicolumn-child p,
+    .multicolumn-child h3 {
+        text-align: center;
+        width: 100%;
+    }
+
+    .multicolumn-child p {
+        line-height: 9px;
+    }
+
+    .multicolumn-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .multicolumn-child>img {
+        align-self: center;
+    }
+}
+
+@media (max-width: 680px) {
+    .multicolumn {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .multicolumn-child {
+        width: 100%;
     }
 }
 
