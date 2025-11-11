@@ -39,6 +39,10 @@ a {
     text-decoration: none;
 }
 
+.center {
+    text-align: center;
+}
+
 .landing>ul,
 .two-columns-no-spacing ul,
 .two-columns-padded ul {
@@ -761,10 +765,13 @@ h3 {
     flex-wrap: wrap;
 }
 
-
 .multicolumn-child p,
 .multicolumn-child h3 {
     text-align: left;
+}
+
+.multicolumn-child p {
+    margin: .5rem 0;
 }
 
 .multicolumn-child h3 {
@@ -776,23 +783,23 @@ h3 {
     height: 30rem;
 }
 
+.multicolumn .center {
+    text-align: center;
+}
+
 @media (max-width: 1370px) {
     .multicolumn {
         gap: 2rem;
     }
 
     .multicolumn-child {
-        width: 40%;
+        width: 20%;
     }
 
-    .multicolumn-child p,
-    .multicolumn-child h3 {
-        text-align: center;
+    .multicolumn-child p:not(.floorplan-specs p),
+    .multicolumn-child h3:not(.floorplan-specs h3) {
         width: 100%;
-    }
-
-    .multicolumn-child p {
-        line-height: 9px;
+        text-align: center;
     }
 
     .multicolumn-child {
@@ -814,6 +821,52 @@ h3 {
 
     .multicolumn-child {
         width: 100%;
+    }
+}
+
+/* FLOORPLAN SPECS */
+
+.floorplan-specs {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 43%;
+    align-content: center;
+    justify-content: center;
+}
+
+
+.floorplan-specs img {
+    width: 20rem;
+    height: auto;
+}
+
+.floorplan-specs h3 {
+    text-transform: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 1370px) {
+    .floorplan-specs {
+        flex-direction: row;
+    }
+
+    .floorplan-specs img {
+        width: 10rem;
+        height: auto;
+    }
+}
+
+@media (max-width: 750px) {
+    .floorplan-specs {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .floorplan-specs img {
+        width: 40%;
     }
 }
 
