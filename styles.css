@@ -44,6 +44,7 @@ a {
 }
 
 .landing>ul,
+.one-column ul,
 .two-columns-no-spacing ul,
 .two-columns-padded ul {
     list-style-type: none;
@@ -52,12 +53,14 @@ a {
 }
 
 .landing>ul li:before,
+.one-column ul li:before,
 .two-columns-no-spacing ul li:before,
 .two-columns-padded ul li:before {
     content: "– ";
     font-weight: 700;
 }
 
+.one-column:not(.blue-background) ul li:before,
 .two-columns-no-spacing:not(.blue-background) ul li:before,
 .two-columns-padded:not(.blue-background) ul li:before {
     content: "– ";
@@ -779,8 +782,9 @@ h3 {
 }
 
 .multicolumn-child>img {
+    max-width: 100%;
     width: auto;
-    height: 30rem;
+    max-height: 30rem;
 }
 
 .multicolumn .center {
