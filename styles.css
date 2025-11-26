@@ -757,6 +757,18 @@ h3 {
     background-color: #2F5F86;
 }
 
+/* TWO COL CARRUSEL */
+
+.two-col-carousel {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.two-col-carousel .carousel-track img {
+    object-fit: cover;
+}
+
 /* MULTICOLUMN LAYOUT */
 
 .multicolumn {
