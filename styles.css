@@ -80,6 +80,12 @@ a {
     }
 }
 
+/* ICON */
+
+.icon {
+    width: 1.6rem;
+}
+
 /* BOTONES */
 
 .btn-main {
@@ -184,6 +190,36 @@ h3 {
 .blue-background h2,
 .blue-background h3 {
     color: white;
+}
+
+/* TABLE */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+th,
+td {
+    text-align: center;
+}
+
+th {
+    padding: 8px;
+    border: none;
+    text-transform: uppercase;
+}
+
+.blue-background th,
+.blue-background td {
+    color: white;
+}
+
+td {
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #ddd;
 }
 
 /* BANNER */
@@ -793,7 +829,7 @@ h3 {
     font-size: 1.5rem;
 }
 
-.multicolumn-child>img {
+.multicolumn-child>img:not(.icon) {
     max-width: 100%;
     width: auto;
     max-height: 30rem;
@@ -802,6 +838,7 @@ h3 {
 .multicolumn .center {
     text-align: center;
 }
+
 
 @media (max-width: 1370px) {
     .multicolumn {
@@ -839,6 +876,44 @@ h3 {
         width: 100%;
     }
 }
+
+/* MULTICOLUMN, THREE PER ROW */
+
+.multicolumn.three-per-row {
+    gap: 2rem;
+}
+
+.multicolumn.three-per-row .multicolumn-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.multicolumn.three-per-row .multicolumn-child {
+    width: 30%;
+}
+
+.multicolumn.three-per-row .multicolumn-child>img {
+    align-self: center;
+}
+
+.multicolumn.three-per-row .multicolumn-child p {
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 680px) {
+    .multicolumn.three-per-row {
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .multicolumn.three-per-row .multicolumn-child {
+        width: 80%;
+    }
+}
+
 
 /* FLOORPLAN SPECS */
 
